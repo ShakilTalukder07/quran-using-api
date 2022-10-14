@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  /*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improve media defaults */
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove built-in form typography styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Create Custom Scroll-Bar */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #c5cadf;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #70768a;
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #454f6b;
+}
+
+:root {
+  --bg-container: #ecf0f3;
+  --bg-card: #fefefe;
+  --green: #02ab68;
+  --light-green: #d8f1eb;
+  --text-black: #000815;
+  --text-light: #8999b2;
+  --icon-color: #c1cbd7;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  background-color: var(--bg-card);
+}
+
+/* Common CSS Classes */
+
+/** Navbar */
+#search-icon {
+  position: absolute;
+  top: 55%;
+  right: 25px;
+  transform: translateY(-55%);
+  font-size: 22px;
+}
+
+.btn-support {
+  background-color: var(--green);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.quran-mazid-text {
+  color: var(--green);
+}
+
+/** Spinner */
+
+#spinner {
+  display: none;
+  /* pointer-events: none; */
+  width: 3.5em;
+  height: 3.5em;
+  border: 0.4em solid transparent;
+  border-color: #02ab68;
+  border-top-color: #d8f1eb;
+  border-radius: 50%;
+  animation: loading-spinner 1s linear infinite;
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+
+@keyframes loading-spinner {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/** Filter Surah */
+.filter-surah-and-bookmark {
+  background-color: var(--bg-container);
+  border-radius: 2rem 2rem 0 0;
+  padding-top: 2.3rem !important;
+}
+
+#see-favourite {
+  cursor: pointer;
+}
+
+.filter-surah {
+  gap: 2rem;
+}
+
+#serial.active,
+#total-ayah.active,
+#alphabet.active {
+  background-color: var(--bg-card);
+  padding: 0.8rem 1.2rem;
+  border-radius: 16px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+}
+
+.filter-surah > div {
+  min-width: 100px;
+  cursor: pointer;
+}
+
+.filter-surah > div > p {
+  font-size: 13.67px;
+  color: var(--text-light);
+}
+
+.filter-surah > div > div > strong:nth-child(1) {
+  font-weight: 600;
+}
+
+/** All Surah Container */
+.surah-card-container {
+  background-color: var(--bg-container);
+  border-radius: 0 0 2rem 2rem;
+  min-height: 100vh;
+}
+
+/** Surah Card */
+.surah-card,
+.ayat-card {
+  background-color: var(--bg-card);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+}
+
+.surah-number-bookmark,
+.number-and-arabic-ayat-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.7rem;
+}
+
+.surah-number-bookmark p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0 !important;
+  font-weight: bold;
+  color: var(--green);
+  background-color: var(--light-green);
+  width: 38px;
+  height: 38px;
+  padding: fit-content;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.surah-number-bookmark .heart,
+.filter-surah-and-bookmark .heart {
+  font-size: 2.2rem;
+  color: var(--icon-color);
+}
+
+.surah-name-info h3,
+span#surah-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-black);
+}
+
+.surah-name-info h4 {
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+i.bxs-heart::before {
+  color: var(--green);
+}
+
+/** Modal */
+
+.quran-img {
+  width: 40px;
+  height: 40px;
+}
+
+/** Modal Body */
+.modal-body {
+  background-color: var(--bg-container);
+  padding: 2rem;
+}
+
+.ayat-card {
+  padding: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.number-and-arabic-ayat-info {
+  flex-wrap: wrap;
+  font-size: 1.3rem;
+}
+
+#sura-and-ayat-number {
+  color: #088f73;
+  font-weight: 600;
+}
+
+#arabic-ayat {
+  direction: rtl;
+  line-height: 2.3rem;
+  font-weight: 500;
+}
+
+.translation-info h6 {
+  color: #088f73;
+  padding-bottom: 1rem;
+}
+
+span.tafsir {
+  color: #e3a410;
+  line-height: 1.5;
+}
+
+.bangla-meaning p#bangla-meaning {
+  color: var(--text-black);
+  font-size: 1.1rem;
+}
+
+/** Media Queries */
+
+@media (min-width: 992px) and (max-width: 1300px) {
+  .ayat-card {
+    width: 65% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .ayat-card {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .filter-surah {
+    gap: 1rem;
+  }
+
+  .filter-surah > div > p {
+    font-size: 12px;
+  }
+
+  .filter-surah > div > div > strong:nth-child(1) {
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 460px) {
+  .bx-down-arrow-alt {
+    display: none;
+  }
+}

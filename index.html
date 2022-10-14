@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FavIcon -->
+    <link rel="shortcut icon" href="images/quran16.png" type="image/x-icon" />
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    <title>Quran Mazid</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar bg-transparent pt-3">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="images/quran16.png"
+            alt="Bootstrap"
+            width="45"
+            height="45"
+          />
+        </a>
+
+        <div role="search" class="position-relative d-none d-sm-block">
+          <input
+            id="search-surah"
+            class="form-control rounded-5 shadow-sm px-4 py-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <i id="search-icon" class="bx bx-search-alt-2"></i>
+        </div>
+        <h4 class="mb-0 d-sm-none quran-mazid-text">QURAN MAZID</h4>
+
+        <button class="btn btn-support rounded-5 px-4 py-2" type="submit">
+          Support
+        </button>
+      </div>
+    </nav>
+    <div class="divider my-5"></div>
+
+    <!-- Add Spinner -->
+    <div id="spinner" class="container"></div>
+
+    <!-- Filter Surah and Bookmark -->
+    <div class="container px-0">
+      <div
+        class="filter-surah-and-bookmark p-4 d-flex justify-content-md-between justify-content-center align-items-center"
+      >
+        <div id="see-favourite" class="d-none d-md-block">
+          <i class="bx bx-heart heart ps-3"></i>
+        </div>
+        <div
+          class="filter-surah d-flex justify-content-between align-items-center pe-3"
+        >
+          <!-- Serial -->
+          <div id="serial" class="active">
+            <p class="mb-1">Sort by</p>
+            <div>
+              <strong>Serial</strong>
+              <strong class="ms-3"><i class="bx bx-down-arrow-alt"></i></strong>
+            </div>
+          </div>
+
+          <!-- Alphabet -->
+          <div id="alphabet">
+            <p class="mb-1">Sort by</p>
+            <div>
+              <strong>Alphabet</strong>
+              <strong class="ms-3"><i class="bx bx-down-arrow-alt"></i></strong>
+            </div>
+          </div>
+
+          <!-- Total Ayah -->
+          <div id="total-ayah">
+            <p class="mb-1">Sort by</p>
+            <div>
+              <strong>Total Ayat</strong>
+              <strong class="ms-3"><i class="bx bx-down-arrow-alt"></i></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- All Surah Container -->
+    <div class="container">
+      <div
+        id="surah-card-container"
+        class="surah-card-container row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-4 p-4"
+      ></div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title w-100 d-flex align-items-center justify-content-center"
+              id="exampleModalLabel"
+            >
+              <img class="quran-img me-4" src="./images/quran.png" alt="" />
+              <span id="surah-name"></span>
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div id="modal-body" class="modal-body"></div>
+          <div class="modal-footer bg-transparent">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Javascript Link -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
